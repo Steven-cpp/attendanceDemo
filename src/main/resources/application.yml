@@ -1,0 +1,60 @@
+server:
+  port: 8080
+  contextPath:
+
+# Spring configuration
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+  
+  # 早上上班时间
+  work_time: 9
+  
+  mail:
+    host: smtp.qq.com 
+    username: 1090656420@qq.com 
+    password:  qubjjiyerlvhgeei
+    properties.mail.smtp.port: 465 
+    from: 1090656420@qq.com
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true
+    default-encoding: utf-8
+
+  datasource:  
+    url : jdbc:mysql://localhost:3306/bootdo?characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username : root
+    password : 123
+    driverClassName : com.mysql.jdbc.Driver 
+    
+   # hibernate:      
+   #   ddl-auto: update      
+   # naming:        
+   #     physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy    
+   #     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect 
+    
+  
+
+    
+ 
+# JWT
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 604800
+  tokenHead: "Bearer "
+  supercode: "99999"
+  route:
+    authentication:
+      path: auth
+
+# Logging configuration
+logging:
+  level:
+    org.springframework:
+      data: DEBUG
+      security: DEBUG
+#spring.boot.admin.url: http://localhost:8080
+
+  
